@@ -11,7 +11,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { FaGithub, FaLinkedin } from "react-icons/all";
-import { ColorModeSwitcher } from "./ColorModeSwitcher";
+import ColorModeSwitcher from "./ColorModeSwitcher";
 import Pine from "./images/Pine.png";
 
 const App: React.FC = () => {
