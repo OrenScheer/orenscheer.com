@@ -48,7 +48,7 @@ const App: React.FC = () => {
           <ColorModeSwitcher zIndex="9" />
         </Flex>
       </Flex>
-      <Flex direction="column" alignItems="center" width="400px">
+      <Flex direction="column" alignItems="center" >
         <Image
           borderRadius="full"
           boxSize="150px"
@@ -70,9 +70,8 @@ const App: React.FC = () => {
             </Button>
           </Link>
         </Flex>
-        <Text mt={3}>
-          I&apos;m a third year student in the Joint Honours BSc. in Computer
-          Science and Mathematics program at the University of Ottawa.
+        <Text mt={3} width="420px">
+          I&apos;m in my third year at the University of Ottawa, studying computer science and math.
         </Text>
       </Flex>
     </Box>
