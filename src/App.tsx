@@ -90,7 +90,7 @@ const App: React.FC = () => {
           computer science and math.
         </Text>
         <Flex direction="column" alignItems="center">
-          <Link href="https://nextavailableread.orenscheer.me" isExternal>
+          <Link href="https://nextavailableread.orenscheer.me">
             <Button variant="outline" colorScheme="teal">
               NextAvailableRead
             </Button>
