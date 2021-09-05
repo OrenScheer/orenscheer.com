@@ -48,7 +48,7 @@ const App: React.FC = () => {
           <ColorModeSwitcher zIndex="9" />
         </Flex>
       </Flex>
-      <Flex direction="column" alignItems="center" >
+      <Flex direction="column" alignItems="center">
         <Image
           borderRadius="full"
           boxSize="150px"
@@ -70,9 +70,25 @@ const App: React.FC = () => {
             </Button>
           </Link>
         </Flex>
-        <Text mt={3} width="420px">
-          I&apos;m in my third year at the University of Ottawa, studying computer science and math.
+        <Text mt={3} mb={3} width="420px">
+          I&apos;m in my third year at the University of Ottawa, studying
+          computer science and math.
         </Text>
+        <Flex alignItems="center">
+          <Link href="https://nextavailableread.orenscheer.me" isExternal>
+            <Button variant="ghost" colorScheme="teal">
+              NextAvailableRead
+            </Button>
+          </Link>
+          <Text>/</Text>
+          <Link href="https://github.com/orenscheer/find-my-representatives" isExternal>
+            <Button variant="ghost" color="#3899A0">Find My Representatives</Button>
+          </Link>
+          <Text>/</Text>
+          <Link href="https://travelorange.orenscheer.me" isExternal>
+            <Button variant="ghost" colorScheme="orange">Travel Orange</Button>
+          </Link>
+        </Flex>
       </Flex>
     </Box>
   );
