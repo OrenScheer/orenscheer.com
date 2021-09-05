@@ -81,12 +81,19 @@ const App: React.FC = () => {
             </Button>
           </Link>
           <Text>/</Text>
-          <Link href="https://github.com/orenscheer/find-my-representatives" isExternal>
-            <Button variant="ghost" color="#3899A0">Find My Representatives</Button>
+          <Link
+            href="https://github.com/orenscheer/find-my-representatives"
+            isExternal
+          >
+            <Button variant="ghost" color="#3899A0">
+              Find My Representatives
+            </Button>
           </Link>
           <Text>/</Text>
           <Link href="https://travelorange.orenscheer.me" isExternal>
-            <Button variant="ghost" colorScheme="orange">Travel Orange</Button>
+            <Button variant="ghost" colorScheme="orange">
+              Travel Orange
+            </Button>
           </Link>
         </Flex>
       </Flex>
