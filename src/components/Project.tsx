@@ -33,16 +33,22 @@ const Project = ({
   description,
   image,
 }: ProjectProps): ReactElement => (
-  <Flex borderColor={accentColor} borderWidth={4} height="100%" width="100%">
+  <Flex
+    borderColor={accentColor}
+    borderWidth={4}
+    height="100%"
+    width="100%"
+    direction={{ base: "column", lg: "row" }}
+  >
     <Link href={demoUrl || gitHubUrl} isExternal flexShrink={0}>
       <Image
-        height="100%"
-        width="263px"
+        height={{ base: "100%", lg: "100%" }}
+        width={{ base: "100%", lg: "263px" }}
         src={image}
         borderRight={`2px solid ${accentColor}`}
       />
     </Link>
-    <VStack spacing={3} ml={4} my={3} alignItems="flex-start">
+    <VStack spacing={3} ml={4} mr={2} my={3} alignItems="flex-start">
       {logo}
       <Text as="i">{technologies.join(", ")}</Text>
       {description}

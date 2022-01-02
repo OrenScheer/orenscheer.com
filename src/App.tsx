@@ -10,14 +10,10 @@ import {
   useColorModeValue,
   Text,
   VStack,
+  useBreakpointValue,
 } from "@chakra-ui/react";
-import {
-  FaAtlas,
-  FaBook,
-  FaEnvelope,
-  FaGithub,
-  FaLinkedin,
-} from "react-icons/all";
+import { FaAtlas, FaBook, FaGithub, FaLinkedin } from "react-icons/all";
+import { EmailIcon } from "@chakra-ui/icons";
 import ColorModeSwitcher from "./ColorModeSwitcher";
 import Pine from "./images/Pine.png";
 import FindMyRepresentativesIcon from "./images/FindMyRepresentativesIcon.png";
@@ -33,6 +29,7 @@ const App: React.FC = () => {
   const nextAvailableReadColor = useColorModeValue("#458EB2", "#87CDE5");
   const findMyRepresentativesColor = "#3899A0";
   const travelOrangeColor = "orange";
+  const mdBreakpoint = useBreakpointValue({ base: false, md: true });
 
   const projects = [
     {
@@ -120,7 +117,14 @@ const App: React.FC = () => {
   ];
 
   return (
-    <Box fontSize="xl" pb={8} d="flex" flexDir="column" alignItems="center">
+    <Box
+      fontSize="xl"
+      pb={8}
+      d="flex"
+      flexDir="column"
+      alignItems="center"
+      width="100%"
+    >
       <Flex width="100%">
         <Flex
           width="100%"
@@ -136,48 +140,81 @@ const App: React.FC = () => {
         </Flex>
       </Flex>
       <Flex direction="column" width="80%" alignItems="center">
-        <Flex alignItems="center">
-          <Image
-            borderRadius="full"
-            boxSize="180px"
-            src={Pine}
-            alt="Oren Scheer"
-            mr={5}
-          />
+        <Flex alignItems="center" justifyContent="center" width="100%">
+          {mdBreakpoint && (
+            <Image
+              borderRadius="full"
+              boxSize="180px"
+              src={Pine}
+              alt="Oren Scheer"
+              mr={5}
+            />
+          )}
           <Flex
             direction="column"
             alignItems="flex-start"
             justifyContent="flex-start"
+            maxWidth="100%"
           >
-            <Heading color={titleColor} size="3xl" mt={3} mb={4}>
+            <Heading
+              color={titleColor}
+              fontSize={{ base: "4xl", md: "6xl" }}
+              mt={3}
+              mb={4}
+              d="flex"
+            >
+              {!mdBreakpoint && (
+                <Image
+                  borderRadius="full"
+                  boxSize="45px"
+                  src={Pine}
+                  alt="Oren Scheer"
+                  mr={5}
+                />
+              )}
               Oren Scheer
             </Heading>
-            <Flex ml={2} justifyContent="space-between" width="450px">
-              <Link href="https://linkedin.com/in/orenscheer" isExternal>
+            <Flex
+              spaceBetween={2}
+              ml={2}
+              justifyContent="space-between"
+              width={{ md: "450px" }}
+              direction={{ base: "column", md: "row" }}
+            >
+              <Link
+                href="https://linkedin.com/in/orenscheer"
+                isExternal
+                d="flex"
+                mb={{ base: 1, md: 0 }}
+              >
                 <Button
                   leftIcon={<FaLinkedin />}
                   variant="link"
                   color={titleColor}
+                  fontSize={{ base: "xl", md: "lg" }}
                 >
                   LinkedIn
                 </Button>
               </Link>
-              <Text>/</Text>
-              <Link href="https://github.com/orenscheer" isExternal>
+              {mdBreakpoint && <Text>/</Text>}
+              <Link href="https://github.com/orenscheer" isExternal d="flex">
                 <Button
                   leftIcon={<FaGithub />}
                   variant="link"
                   color={titleColor}
+                  mb={{ base: 1, md: 0 }}
+                  fontSize={{ base: "xl", md: "lg" }}
                 >
                   GitHub
                 </Button>
               </Link>
-              <Text>/</Text>
-              <Link href="mailto:contact@orenscheer.me" isExternal>
+              {mdBreakpoint && <Text>/</Text>}
+              <Link href="mailto:contact@orenscheer.me" isExternal d="flex">
                 <Button
-                  leftIcon={<FaEnvelope />}
+                  leftIcon={<EmailIcon mt={1} />}
                   variant="link"
                   color={titleColor}
+                  fontSize={{ base: "xl", md: "lg" }}
                 >
                   contact@orenscheer.me
                 </Button>
