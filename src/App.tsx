@@ -23,6 +23,7 @@ import FindMyRepresentativesLight from "./images/FindMyRepresentativesLight.png"
 import FindMyRepresentativesDark from "./images/FindMyRepresentativesDark.png";
 import TravelOrange from "./images/TravelOrange.png";
 import Project from "./components/Project";
+import { BASE_URL } from "./constants";
 
 const App: React.FC = () => {
   const titleColor = useColorModeValue("#512A20", "#C4F1F9");
@@ -42,7 +43,7 @@ const App: React.FC = () => {
       accentColor: nextAvailableReadColor,
       technologies: ["TypeScript", "Node.js", "React", "Chakra UI"],
       gitHubUrl: "https://github.com/orenscheer/nextavailableread",
-      demoUrl: "https://nextavailableread.orenscheer.me",
+      demoUrl: `https://nextavailableread.${BASE_URL}`,
       demoButtonText: "Application",
       description: (
         <Text>
@@ -102,7 +103,7 @@ const App: React.FC = () => {
       technologies: ["React", "Ant Design"],
       gitHubUrl:
         "https://github.com/orenscheer/orenscheer.github.io/tree/main/seg3525/lab8",
-      demoUrl: "https://travelorange.orenscheer.me",
+      demoUrl: `https://travelorange.${BASE_URL}`,
       demoButtonText: "Prototype",
       description: (
         <Text>
@@ -178,7 +179,7 @@ const App: React.FC = () => {
               spaceBetween={2}
               ml={2}
               justifyContent="space-between"
-              width={{ md: "450px" }}
+              width={{ md: "460px" }}
               direction={{ base: "column", md: "row" }}
             >
               <Link
@@ -209,14 +210,14 @@ const App: React.FC = () => {
                 </Button>
               </Link>
               {mdBreakpoint && <Text>/</Text>}
-              <Link href="mailto:contact@orenscheer.me" isExternal d="flex">
+              <Link href={`mailto:contact@${BASE_URL}`} isExternal d="flex">
                 <Button
                   leftIcon={<EmailIcon mt={1} />}
                   variant="link"
                   color={titleColor}
                   fontSize={{ base: "xl", md: "lg" }}
                 >
-                  contact@orenscheer.me
+                  {`contact@${BASE_URL}`}
                 </Button>
               </Link>
             </Flex>
