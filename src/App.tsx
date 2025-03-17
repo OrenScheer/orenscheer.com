@@ -82,7 +82,7 @@ const App: React.FC = () => {
           federal, provincial, and municipal elected officials, with data
           provided by{" "}
           <Link href="https://represent.opennorth.ca/" isExternal>
-            Open North
+            <Text as="u">Open North</Text>
           </Link>
           .
         </Text>
@@ -145,7 +145,7 @@ const App: React.FC = () => {
           {mdBreakpoint && (
             <Image
               borderRadius="full"
-              boxSize="180px"
+              boxSize="200px"
               src={Pine}
               alt="Oren Scheer"
               mr={5}
@@ -221,9 +221,24 @@ const App: React.FC = () => {
                 </Button>
               </Link>
             </Flex>
-            <Text mt={3} mb={3} maxWidth="420px" mx={2}>
-              I&apos;m in my third year at the University of Ottawa, studying
-              computer science and math. Some of my projects can be found below!
+            <Text mt={3} mb={3} maxWidth="520px" mx={2}>
+              I am a graduate of the University of Ottawa, where I studied{" "}
+              <Link
+                href="https://catalogue.uottawa.ca/en/undergrad/joint-honours-bsc-computer-science-mathematics"
+                color={titleColor}
+                isExternal
+              >
+                <Text as="u">computer science and math</Text>
+              </Link>
+              . I am currently a software engineer in{" "}
+              <Link
+                href="https://engineering.linkedin.com/teams/data/data-infrastructure"
+                color={titleColor}
+                isExternal
+              >
+                <Text as="u">data infra at LinkedIn</Text>
+              </Link>
+              . Some of my projects can be found below!
             </Text>
           </Flex>
         </Flex>
